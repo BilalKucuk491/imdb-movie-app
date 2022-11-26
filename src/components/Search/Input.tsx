@@ -1,6 +1,8 @@
 import {View, StyleSheet, TextInput} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import React, {useState} from 'react';
+import {COLORS} from '../../constants';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 const Input = () => {
   const [visibility, setVisibility] = useState(true);
@@ -9,7 +11,12 @@ const Input = () => {
     <View style={styles.container}>
       <View style={styles.inputContainer}>
         {visibility && (
-          <Icon style={styles.icon} name="search" size={27} color={'#000'} />
+          <Icon
+            style={styles.icon}
+            name="search"
+            size={27}
+            color={COLORS.textColor}
+          />
         )}
         <TextInput
           maxLength={50}
@@ -41,12 +48,12 @@ const styles = StyleSheet.create({
     marginLeft: 15,
   },
   Input: {
-    backgroundColor: '#F6D632',
+    backgroundColor: COLORS.inputBackgroundColor,
     fontSize: 20,
     maxWidth: 300,
     width: 300,
     borderRadius: 20,
-    color: '#000',
+    color: COLORS.textColor,
     textAlign: 'center',
   },
 });

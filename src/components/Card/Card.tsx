@@ -2,7 +2,7 @@ import {View, Text, Image, TouchableOpacity, StyleSheet} from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {CardInterface} from '../../types/CardInterface';
-import {images} from '../../constants/index';
+import {COLORS, images} from '../../constants/index';
 
 const Card = ({imageUrl, movieName, movieType, movieYear}: CardInterface) => {
   return (
@@ -13,18 +13,22 @@ const Card = ({imageUrl, movieName, movieType, movieYear}: CardInterface) => {
         <Image source={images.notFoundImage} style={styles.image} />
       )}
       <View style={styles.infoContainer}>
-        <Text style={{color: 'white', fontSize: 25}}>
+        <Text style={{...styles.text, fontSize: 25}}>
           {movieName !== 'N/A' ? movieName : 'NONE'}
         </Text>
-        <Text style={{color: 'white'}}>
+        <Text style={styles.text}>
           {movieYear !== 'N/A' ? movieYear : 'NONE'}
         </Text>
-        <Text style={{color: 'white'}}>
+        <Text style={styles.text}>
           {movieType !== 'N/A' ? movieType.toUpperCase() : 'NONE'}
         </Text>
 
         <TouchableOpacity>
-          <Icon name="checkmark-circle-sharp" size={56} color={'#F6D632'} />
+          <Icon
+            name="checkmark-circle-sharp"
+            size={56}
+            color={COLORS.checkIconColor}
+          />
         </TouchableOpacity>
       </View>
     </View>
@@ -36,13 +40,16 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     flexDirection: 'row',
     marginTop: 25,
-    backgroundColor: '#373737',
+    backgroundColor: COLORS.cardColor,
+  },
+  text: {
+    color: COLORS.titleColor,
   },
   image: {
     flex: 1,
     height: 250,
     resizeMode: 'contain',
-    backgroundColor: '#373737',
+    backgroundColor: COLORS.cardColor,
     marginLeft: -20,
   },
 

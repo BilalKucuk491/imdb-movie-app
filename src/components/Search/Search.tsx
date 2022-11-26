@@ -1,6 +1,7 @@
 import {View, StyleSheet} from 'react-native';
 import React from 'react';
 import Input from './Input';
+import { COLORS } from '../../constants';
 const Search = () => {
   return (
     <View style={styles.container}>
@@ -12,7 +13,7 @@ const Search = () => {
 const styles = StyleSheet.create({
   container: {
     height: 90,
-    backgroundColor: '#373737',
+    backgroundColor: COLORS.cardColor,
     borderBottomWidth: 1,
   },
 });

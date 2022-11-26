@@ -2,7 +2,7 @@ import {View, StyleSheet} from 'react-native';
 import React, {useState, useEffect} from 'react';
 import CardList from './src/components/Card';
 import Search from './src/components/Search';
-
+import { COLORS } from './src/constants';
 const data = [];
 
 const App = () => {
@@ -34,10 +34,9 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#161616',
+    backgroundColor: COLORS.backgroundColor,
   },
   header: {
-    backgroundColor: 'red',
     height: 100,
   },
 });
