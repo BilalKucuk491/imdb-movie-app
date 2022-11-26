@@ -1,3 +1,3 @@
-const notFoundImage = require('../../assets/images/not-found-image.svg');
+const notFoundImage = require('../assets/images/not-found-image.svg');
 
 export {notFoundImage};

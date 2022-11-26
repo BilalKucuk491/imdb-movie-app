@@ -2,7 +2,7 @@ import {View, Text, Image, TouchableOpacity, StyleSheet} from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {CardInterface} from '../../types/CardInterface';
-import {notFoundImage} from '../../constants/images';
+import {images} from '../../constants/index';
 
 const Card = ({imageUrl, movieName, movieType, movieYear}: CardInterface) => {
   return (
@@ -10,7 +10,7 @@ const Card = ({imageUrl, movieName, movieType, movieYear}: CardInterface) => {
       {imageUrl !== 'N/A' ? (
         <Image source={{uri: imageUrl}} style={styles.image} />
       ) : (
-        <Image source={notFoundImage} style={styles.image} />
+        <Image source={images.notFoundImage} style={styles.image} />
       )}
       <View style={styles.infoContainer}>
         <Text style={{color: 'white', fontSize: 25}}>
@@ -27,7 +27,6 @@ const Card = ({imageUrl, movieName, movieType, movieYear}: CardInterface) => {
           <Icon name="checkmark-circle-sharp" size={56} color={'#F6D632'} />
         </TouchableOpacity>
       </View>
-      
     </View>
   );
 };
