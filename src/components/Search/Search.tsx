@@ -1,19 +1,19 @@
-import {View, Text, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import React from 'react';
-
+import Input from './Input';
 const Search = () => {
   return (
     <View style={styles.container}>
-      <Text>Search</Text>
+      <Input />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    height: 100,
-    backgroundColor: '#fff',
-    borderBottomWidth:1,
+    height: 90,
+    backgroundColor: '#373737',
+    borderBottomWidth: 1,
   },
 });
 

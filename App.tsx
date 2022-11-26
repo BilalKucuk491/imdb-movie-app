@@ -2,14 +2,16 @@ import {View, StyleSheet} from 'react-native';
 import React, {useState, useEffect} from 'react';
 import CardList from './src/components/Card';
 import Search from './src/components/Search';
+
 const data = [];
 
 const App = () => {
+
   const [_data, _setData] = useState([]);
 
   const getData = async () => {
     const response = await fetch(
-      'https://omdbapi.com/?apikey=b1916020&s=narnia',
+      'https://omdbapi.com/?apikey=b1916020&s=erdogan',
     );
     const jsonData = await response.json();
 

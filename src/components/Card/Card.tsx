@@ -2,7 +2,7 @@ import {View, Text, Image, TouchableOpacity, StyleSheet} from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {CardInterface} from '../../types/CardInterface';
-import {notFoundImage} from '../../actions/constants/images';
+import {notFoundImage} from '../../constants/images';
 
 const Card = ({imageUrl, movieName, movieType, movieYear}: CardInterface) => {
   return (
