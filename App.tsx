@@ -9,7 +9,7 @@ const App = () => {
 
   const getData = async () => {
     const response = await fetch(
-      'https://omdbapi.com/?apikey=b1916020&s=iyjman',
+      'https://omdbapi.com/?apikey=b1916020&s=narnia',
     );
     const jsonData = await response.json();
 
