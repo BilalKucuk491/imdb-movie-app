@@ -95,7 +95,7 @@ const TabNavigator = () => {
               return (
                 <TabIcon
                   focused={focused}
-                  icon={icons.rightArrow}
+                  icon={icons.video}
                   label="VIDEO"
                 />
               );
@@ -119,7 +119,7 @@ const TabNavigator = () => {
               return (
                 <TabIcon
                   focused={focused}
-                  icon={icons.settings}
+                  icon={icons.personel}
                   label="PERSONEL"
                 />
               );
