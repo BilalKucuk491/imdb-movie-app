@@ -1,14 +1,9 @@
 import {View, Text, Image} from 'react-native';
 import React from 'react';
 import {FONTS, COLORS} from '../../constants/index';
+import { TabIconInterface } from '../../types/TabIconInterface';
 
-interface TabIconInterface {
-  focused?: any;
-  icon?: any;
-  iconStyle?: any;
-  label?: string;
-  isTrade?: boolean;
-}
+
 
 const TabIcon = ({
   focused,

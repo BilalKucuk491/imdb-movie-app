@@ -1,13 +1,7 @@
 import {Text, TouchableOpacity, Image, TextStyle} from 'react-native';
 import React from 'react';
 import {COLORS, FONTS, SIZES} from '../../constants/index';
-
-interface IconTextButtonInterface {
-  label?: string;
-  icon?: any;
-  containerStyle?: any;
-  onPress?: any;
-}
+import {IconTextButtonInterface} from '../../types/IconTextButtonInterface';
 
 const IconTextButton = ({
   label,

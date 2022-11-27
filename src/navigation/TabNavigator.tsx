@@ -5,12 +5,10 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Home, Search,Video,Personel} from '../screens';
 import {COLORS, icons} from '../constants';
 import {TabIcon} from '../components/TabIcon';
+import { TabBarCustomButtonInterface } from '../types/TabBarCustomButtonInterface';
 const Tab = createBottomTabNavigator();
 
-interface TabBarCustomButtonInterface {
-  children: any;
-  onPress: any;
-}
+
 
 const TabBarCustomButton = ({
   children,
