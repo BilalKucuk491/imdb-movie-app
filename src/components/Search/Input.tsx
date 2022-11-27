@@ -2,10 +2,18 @@ import {View, StyleSheet, TextInput} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import React, {useState} from 'react';
 import {COLORS} from '../../constants';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
-
+import { useDispatch } from 'react-redux';
 const Input = () => {
   const [visibility, setVisibility] = useState(true);
+
+  const dispatch = useDispatch();
+
+  
+
+  const onSubmitEvent = (value: string) => {
+    dispatch({type:"ON_SEARCH_MOVIE",payload:value});
+
+  };
 
   return (
     <View style={styles.container}>
@@ -25,6 +33,7 @@ const Input = () => {
           onChangeText={e =>
             e.length > 0 ? setVisibility(false) : setVisibility(true)
           }
+          onSubmitEditing={e => onSubmitEvent(e.nativeEvent.text)}
         />
       </View>
     </View>

@@ -2,6 +2,7 @@ import {View, StyleSheet} from 'react-native';
 import React from 'react';
 import Input from './Input';
 import { COLORS } from '../../constants';
+
 const Search = () => {
   return (
     <View style={styles.container}>

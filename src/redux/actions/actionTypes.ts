@@ -1,0 +1,5 @@
+export enum ActionTypes {
+  ON_SEARCH_MOVIE = 'ON_SEARCH_MOVIE',
+  ON_FAV_MOVIE_ADD = 'ON_FAV_MOVIE_ADD',
+  ON_ERROR = 'ON_ERROR',
+}

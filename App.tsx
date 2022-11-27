@@ -1,44 +1,20 @@
-import {View, StyleSheet} from 'react-native';
-import React, {useState, useEffect} from 'react';
-import CardList from './src/components/Card';
-import Search from './src/components/Search';
-import { COLORS } from './src/constants';
-const data = [];
-
-const App = () => {
-
-  const [_data, _setData] = useState([]);
-
-  const getData = async () => {
-    const response = await fetch(
-      'https://omdbapi.com/?apikey=b1916020&s=narnia',
-    );
-    const jsonData = await response.json();
-
-    _setData(jsonData.Search);
-    data.push(jsonData.Search);
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
-
+import React from 'react';
+import Home from './src/screens/Home';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
+import {Provider} from 'react-redux';
+import {store} from './src/redux/store';
+const RootApp = () => {
   return (
-    <View style={styles.container}>
-      <Search />
-      <CardList data={_data} />
-    </View>
+    <Provider store={store}>
+      <GestureHandlerRootView style={{flex: 1}}>
+        <Home />
+      </GestureHandlerRootView>
+    </Provider>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: COLORS.backgroundColor,
-  },
-  header: {
-    height: 100,
-  },
-});
+const App = () => {
+  return <RootApp />;
+};
 
 export default App;
