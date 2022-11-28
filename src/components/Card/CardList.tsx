@@ -10,7 +10,7 @@ interface CardListInterface {
 const CardList = ({data}: CardListInterface) => {
   return (
     <View style={{flex: 1}}>
-      {data != null ? (
+      {data != '' ? (
         <ScrollView>
           {data
             .filter(el => {

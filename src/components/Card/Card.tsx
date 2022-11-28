@@ -13,40 +13,40 @@ const Card = ({
   vote_average,
   release_date,
 }: CardInterface) => {
-
   return (
     <View style={styles.container}>
-      {poster_path !== 'N/A' ? (
+      {poster_path !== null ? (
         <Image source={{uri: API_IMG + poster_path}} style={styles.image} />
       ) : (
         <Image source={images.notFoundImage} style={styles.image} />
       )}
-      <View style={styles.infoContainer}>
-        <Text style={{...styles.text, fontSize: 25}}>
-          {original_title !== 'N/A' ? original_title : 'NONE'}
-        </Text>
-        <Text style={styles.text}>
-          {release_date !== 'N/A' ? release_date : 'NONE'}
-        </Text>
-        <Text style={styles.text}>
-          {overview.length < 100
-            ? `${overview}`
-            : `${overview.substring(0, 32)}...`}
-        </Text>
-        <Text style={styles.text}>
-          {original_language !== 'N/A' ? original_language : 'NONE'}
-        </Text>
-        <Text style={styles.text}>
-          {vote_average !== 'N/A' ? vote_average : 'NONE'}
-        </Text>
 
-        <TouchableOpacity>
-          <Icon
-            name="checkmark-circle-sharp"
-            size={56}
-            color={COLORS.checkIconColor}
-          />
-        </TouchableOpacity>
+      <View style={styles.infoContainer}>
+        <Text style={{...styles.text, fontSize: 20}}>
+          {original_title == null ? 'NONE' : original_title}
+        </Text>
+        <View
+          style={{
+            justifyContent: 'space-between',
+            flexDirection: 'row',
+            marginTop: 5,
+          }}>
+          <Text style={styles.text}>
+            {release_date == null ? 'NONE' : release_date}
+          </Text>
+          <Text style={{...styles.text, color: COLORS.checkIconColor}}>
+            {original_language == null ? 'NONE' : original_language.toLocaleUpperCase()}
+          </Text>
+        </View>
+        <View style={styles.infoBody}>
+          <Text style={styles.text}>
+            {overview === null
+              ? 'NONE'
+              : (overview.length < 250
+              ? `${overview}`
+              : `${overview.substring(0, 100)}...`)}
+          </Text>
+        </View>
       </View>
     </View>
   );
@@ -56,8 +56,9 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: 'space-between',
     flexDirection: 'row',
-    marginTop: 25,
+    marginVertical: 25,
     backgroundColor: COLORS.cardColor,
+    height: 250,
   },
   text: {
     color: COLORS.titleColor,
@@ -72,9 +73,11 @@ const styles = StyleSheet.create({
 
   infoContainer: {
     flex: 1,
-    alignItems: 'flex-start',
-    padding: 10,
-    justifyContent: 'space-between',
+    marginVertical: 15,
+    marginRight: 25,
+  },
+  infoBody: {
+    marginVertical: 15,
   },
 });
 
