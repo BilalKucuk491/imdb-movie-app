@@ -6,6 +6,7 @@ import {COLORS} from '../constants';
 import {useSelector} from 'react-redux';
 import {MovieState} from '../redux/reducers/movieReducer';
 import {API_URL} from '../../Api';
+import Header from '../components/Header';
 
 const data = [];
 
@@ -30,9 +31,7 @@ const HomeScreen = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.headerText}>TRENDS</Text>
-      </View>
+      <Header/>
       {/* <Search /> */}
       <CardList data={_data} />
     </View>
@@ -44,15 +43,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: COLORS.backgroundColor,
   },
-  buttonContainer: {},
-  header: {
-    flex: 0.08,
-    backgroundColor: COLORS.backgroundColor,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 10,
-  },
-  headerText: {color: COLORS.checkIconColor, marginTop: 8, fontSize: 30},
 });
 
 export default HomeScreen;

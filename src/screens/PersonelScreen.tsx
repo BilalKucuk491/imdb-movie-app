@@ -1,6 +1,7 @@
 import {View, StyleSheet, Text} from 'react-native';
 import React from 'react';
 import {COLORS} from '../constants';
+import Header from '../components/Header';
 
 const PersonelScreen = () => {
   return (
