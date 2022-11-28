@@ -1,36 +1,40 @@
-import {View, StyleSheet, TouchableOpacity,Text} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import React, {useState, useEffect} from 'react';
 import CardList from '../components/Card/CardList';
 import {COLORS} from '../constants';
 import {useSelector} from 'react-redux';
 import {MovieState} from '../redux/reducers/movieReducer';
-import { API_URL} from '../../Api';
+import {API_URL, API_SEARCH} from '../../Api';
 
-import SearchMovie, {} from "../components/Search"
-
+import SearchMovie from '../components/Search';
+const data = [];
 const SearchScreen = () => {
   const state = useSelector<MovieState, MovieState['searchText']>(
     state => state.searchText,
   );
 
   const [_data, _setData] = useState([]);
-  const getData = async () => {
-    await fetch(API_URL)
-      .then(res => res.json())
-      .then(data => {
-        console.log(data.results[0].original_title);
-        _setData(data.results);
-      });
+
+  const getData = async (searchValue: string) => {
+    try {
+      const url = API_SEARCH + searchValue;
+      const res = await fetch(url);
+      const jsonData = await res.json();
+      _setData(jsonData.results);
+      data.push(jsonData.results);
+    } catch (error) {
+      console.log('Arama hatasi: ' + error);
+    }
   };
 
   useEffect(() => {
-    getData();
+    getData(state.searchText);
   }, [state]);
 
   return (
     <View style={styles.container}>
-      <SearchMovie/>
-      <CardList data={_data} /> 
+      <SearchMovie />
+      <CardList data={_data} />
     </View>
   );
 };

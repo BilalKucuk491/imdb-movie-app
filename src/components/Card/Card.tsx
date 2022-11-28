@@ -13,7 +13,6 @@ const Card = ({
   vote_average,
   release_date,
 }: CardInterface) => {
-  console.log(overview.length);
 
   return (
     <View style={styles.container}>
