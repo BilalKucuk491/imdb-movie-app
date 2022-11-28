@@ -12,6 +12,4 @@ https://user-images.githubusercontent.com/64019703/204266081-35deedef-223c-4343-
 
 
 
-<h2>Old Movie App</h2>
-https://user-images.githubusercontent.com/64019703/204144176-46c81803-7e0c-4bbc-b55e-31f8ce019c78.mp4
 
