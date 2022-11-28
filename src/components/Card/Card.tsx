@@ -3,24 +3,42 @@ import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {CardInterface} from '../../types/CardInterface';
 import {COLORS, images} from '../../constants/index';
+import {API_IMG} from '../../../Api';
 
-const Card = ({imageUrl, movieName, movieType, movieYear}: CardInterface) => {
+const Card = ({
+  original_language,
+  original_title,
+  overview,
+  poster_path,
+  vote_average,
+  release_date,
+}: CardInterface) => {
+  console.log(overview.length);
+
   return (
     <View style={styles.container}>
-      {imageUrl !== 'N/A' ? (
-        <Image source={{uri: imageUrl}} style={styles.image} />
+      {poster_path !== 'N/A' ? (
+        <Image source={{uri: API_IMG + poster_path}} style={styles.image} />
       ) : (
         <Image source={images.notFoundImage} style={styles.image} />
       )}
       <View style={styles.infoContainer}>
         <Text style={{...styles.text, fontSize: 25}}>
-          {movieName !== 'N/A' ? movieName : 'NONE'}
+          {original_title !== 'N/A' ? original_title : 'NONE'}
         </Text>
         <Text style={styles.text}>
-          {movieYear !== 'N/A' ? movieYear : 'NONE'}
+          {release_date !== 'N/A' ? release_date : 'NONE'}
         </Text>
         <Text style={styles.text}>
-          {movieType !== 'N/A' ? movieType.toUpperCase() : 'NONE'}
+          {overview.length < 100
+            ? `${overview}`
+            : `${overview.substring(0, 32)}...`}
+        </Text>
+        <Text style={styles.text}>
+          {original_language !== 'N/A' ? original_language : 'NONE'}
+        </Text>
+        <Text style={styles.text}>
+          {vote_average !== 'N/A' ? vote_average : 'NONE'}
         </Text>
 
         <TouchableOpacity>

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {TouchableOpacity, View} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import {Home, Search,Video,Personel} from '../screens';
+import {HomeScreen, SearchScreen,VideoScreen,PersonelScreen} from '../screens';
 import {COLORS, icons} from '../constants';
 import {TabIcon} from '../components/TabIcon';
 import { TabBarCustomButtonInterface } from '../types/TabBarCustomButtonInterface';
@@ -54,7 +54,7 @@ const TabNavigator = () => {
           },
         }}
         name="Home"
-        component={Home}
+        component={HomeScreen}
         listeners={{
           tabPress: e => {
             if (isTradeModalVisible) {
@@ -78,7 +78,7 @@ const TabNavigator = () => {
           },
         }}
         name="Search"
-        component={Search}
+        component={SearchScreen}
         listeners={{
           tabPress: e => {
             if (isTradeModalVisible) {
@@ -103,7 +103,7 @@ const TabNavigator = () => {
           },
         }}
         name="VIDEO"
-        component={Video}
+        component={VideoScreen}
         listeners={{
           tabPress: e => {
             if (isTradeModalVisible) {
@@ -127,7 +127,7 @@ const TabNavigator = () => {
           },
         }}
         name="PERSONEL"
-        component={Personel}
+        component={PersonelScreen}
         listeners={{
           tabPress: e => {
             if (isTradeModalVisible) {

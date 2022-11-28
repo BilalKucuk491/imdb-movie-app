@@ -3,7 +3,7 @@ import React from 'react';
 import Input from './Input';
 import { COLORS } from '../../constants';
 
-const Search = () => {
+const SearchMovie = () => {
   return (
     <View style={styles.container}>
       <Input />
@@ -19,4 +19,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Search;
+export default SearchMovie;

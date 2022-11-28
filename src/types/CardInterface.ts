@@ -1,6 +1,8 @@
 export interface CardInterface {
-    imageUrl: string;
-    movieName: string;
-    movieYear: string;
-    movieType: string;
-  }
+  original_language: string;
+  original_title: string;
+  overview: string;
+  poster_path: string;
+  release_date: string;
+  vote_average: string;
+}

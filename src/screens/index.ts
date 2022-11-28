@@ -1,5 +1,5 @@
-import Home from './Home';
-import Search from './Search';
-import Video from './Video';
-import Personel from './Personel';
-export {Home, Search, Video, Personel};
+import HomeScreen from './HomeScreen';
+import SearchScreen from './SearchScreen';
+import VideoScreen from './VideoScreen';
+import PersonelScreen from './PersonelScreen';
+export {HomeScreen, SearchScreen, VideoScreen, PersonelScreen};

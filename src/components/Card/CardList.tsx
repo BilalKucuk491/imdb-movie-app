@@ -20,16 +20,24 @@ const CardList = ({data}: CardListInterface) => {
               return (
                 <Card
                   key={key}
-                  imageUrl={item.Poster}
-                  movieName={item.Title}
-                  movieYear={item.Year}
-                  movieType={item.Type}
+                  original_language={item.original_language}
+                  original_title={item.title}
+                  overview={item.overview}
+                  poster_path={item.poster_path}
+                  release_date={item.release_date}
+                  vote_average={item.vote_average}
                 />
               );
             })}
         </ScrollView>
       ) : (
-        <Text style={{padding:20,color: '#fff', fontSize: 20, fontWeight: 'bold'}}>
+        <Text
+          style={{
+            padding: 20,
+            color: '#fff',
+            fontSize: 20,
+            fontWeight: 'bold',
+          }}>
           Arama sonucu bulunamadi...
         </Text>
       )}

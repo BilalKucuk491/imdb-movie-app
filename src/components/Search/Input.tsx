@@ -11,7 +11,7 @@ const Input = () => {
   
 
   const onSubmitEvent = (value: string) => {
-    dispatch({type:"ON_SEARCH_MOVIE",payload:value});
+    // dispatch({type:"ON_SEARCH_MOVIE",payload:value});
 
   };
 
